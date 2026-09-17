@@ -8,11 +8,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-/* =========================================================
-   TASARIM SİSTEMİ — Karakuş KDS
-   Tema: kırmızı lahana antosiyanin renk kimliği
-   Mor (nötr pH, sağlıklı) → Pembe (asidik pH, dikkat)
-   ========================================================= */
 :root{
   --base:#FAFAF8;
   --card:#F3F0F8;
@@ -41,7 +36,6 @@ button{font-family:var(--font);border:none;cursor:pointer;background:none;}
 :focus-visible{outline:3px solid var(--plum);outline-offset:3px;border-radius:var(--r-sm);}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
 
-/* --- Telefon kabuğu --- */
 .phone-shell{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;}
 .phone-device{
   width:min(390px,100vw);
@@ -54,7 +48,6 @@ button{font-family:var(--font);border:none;cursor:pointer;background:none;}
 }
 @media(max-width:430px){.phone-device{border-radius:0;box-shadow:none;width:100vw;height:100svh;}}
 
-/* --- Ekran yönetimi --- */
 .screen{
   position:absolute;inset:0;
   display:flex;flex-direction:column;
@@ -67,7 +60,6 @@ button{font-family:var(--font);border:none;cursor:pointer;background:none;}
 .screen::-webkit-scrollbar{display:none;}
 .screen.active{opacity:1;pointer-events:all;}
 
-/* --- Ortak bileşenler --- */
 .top-bar{display:flex;align-items:center;justify-content:space-between;padding:54px 24px 12px;flex-shrink:0;}
 .logo-type{font-size:20px;font-weight:800;color:var(--plum);letter-spacing:-.02em;display:flex;align-items:center;gap:7px;}
 .logo-dot{width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,var(--blush),var(--plum-soft));}
@@ -84,9 +76,6 @@ button{font-family:var(--font);border:none;cursor:pointer;background:none;}
 }
 .btn-primary:active{transform:scale(.97);box-shadow:0 3px 10px rgba(107,79,158,.20);}
 
-/* =========================================================
-   EKRAN 1 — ONBOARDING
-   ========================================================= */
 #screen-onboard{background:var(--base);padding-bottom:40px;}
 
 .onboard-hero{
@@ -115,9 +104,6 @@ button{font-family:var(--font);border:none;cursor:pointer;background:none;}
 .legal-box strong{color:var(--plum);font-weight:700;}
 .onboard-cta{padding:24px 24px 0;}
 
-/* =========================================================
-   EKRAN 2 — KAMERA TARAMA
-   ========================================================= */
 #screen-scan{background:#1A0F2E;}
 
 .scan-top-bar{
@@ -139,12 +125,10 @@ button{font-family:var(--font);border:none;cursor:pointer;background:none;}
 #camVideo2{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 .camera-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,#2D1A4E,#0F0720);}
 
-/* Kılavuz dairesi — imza unsur */
 .guide-ring-wrap{position:relative;z-index:10;display:flex;flex-direction:column;align-items:center;margin-top:20px;}
 .guide-ring{position:relative;width:230px;height:230px;}
 .guide-ring-outer{position:absolute;inset:-8px;border-radius:50%;border:2px dashed rgba(200,186,232,.40);}
 
-/* pH değişim animasyonu */
 @keyframes phShift{
   0%,40%  {border-color:rgba(180,158,220,.85);box-shadow:0 0 0 8px rgba(107,79,158,.12),inset 0 0 40px rgba(107,79,158,.15);}
   60%,95% {border-color:rgba(240,168,192,.90);box-shadow:0 0 0 8px rgba(224,120,152,.15),inset 0 0 40px rgba(240,120,160,.12);}
@@ -168,17 +152,15 @@ button{font-family:var(--font);border:none;cursor:pointer;background:none;}
 }
 .scan-line{position:absolute;left:8px;right:8px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,186,232,.8),transparent);top:10%;animation:scanline 2.8s ease-in-out infinite;pointer-events:none;}
 
-/* Alt panel */
 .scan-bottom-panel{position:absolute;bottom:0;left:0;right:0;z-index:20;padding:24px 24px 44px;background:linear-gradient(to top,rgba(26,15,46,.98) 70%,transparent);}
 .scan-instruction {
     text-align: center;
     color: rgba(255,255,255,.80);
     font-size: 14.5px;
     line-height: 1.55;
-    /* YENİ EKLENEN/DEĞİŞTİRİLEN KISIMLAR */
     position: relative;
-    top: -300px; /* Yazıyı yukarı doğru kaydırır. İhtiyacınıza göre -20px, -30px yapabilirsiniz */
-    margin-bottom: 30px; /* Altındaki "Beyaz ışık, 10-15 cm" kutularıyla olan mesafeyi açar (24px'ti 30px yaptık) */
+    top: -300px;
+    margin-bottom: 30px; 
 }
 .scan-instruction strong{color:rgba(255,255,255,.96);font-weight:700;}
 .scan-hint-row{display:flex;gap:8px;margin-bottom:20px;}
@@ -189,7 +171,6 @@ button{font-family:var(--font);border:none;cursor:pointer;background:none;}
 .btn-capture:active{transform:scale(.93);box-shadow:0 0 0 4px rgba(255,255,255,.14),0 4px 12px rgba(0,0,0,.30);}
 .btn-capture-inner{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--plum-soft),var(--plum));}
 
-/* Kamera izin overlay */
 .cam-status-overlay{position:absolute;inset:0;z-index:15;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:32px;text-align:center;}
 .cam-status-icon{font-size:48px;}
 .cam-status-text{font-size:15px;font-weight:600;color:rgba(255,255,255,.85);line-height:1.5;}
@@ -197,9 +178,6 @@ button{font-family:var(--font);border:none;cursor:pointer;background:none;}
 .btn-cam-permit{margin-top:8px;padding:14px 28px;background:rgba(107,79,158,.55);border:1.5px solid rgba(200,186,232,.40);border-radius:var(--r-pill);color:var(--white);font-size:15px;font-weight:700;font-family:var(--font);backdrop-filter:blur(8px);transition:background .2s ease;}
 .btn-cam-permit:active{background:rgba(107,79,158,.75);}
 
-/* =========================================================
-   EKRAN 3 — ANALİZ EDİLİYOR
-   ========================================================= */
 #screen-analyze{background:var(--base);align-items:center;justify-content:space-between;padding:54px 24px 48px;}
 
 .analyze-header{text-align:center;width:100%;}
@@ -217,7 +195,6 @@ button{font-family:var(--font);border:none;cursor:pointer;background:none;}
 .cc-name{font-size:10px;color:rgba(255,255,255,.55);font-weight:600;}
 .compare-arrow{width:42px;height:42px;background:var(--card-deep);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--plum-soft);flex-shrink:0;margin:0 -6px;z-index:2;border:2px solid var(--lavender);}
 
-/* Algoritma adımları */
 .algo-steps{width:100%;display:flex;flex-direction:column;gap:10px;margin-top:8px;}
 .algo-step{background:var(--card);border-radius:var(--r-md);padding:14px 16px;display:flex;align-items:center;gap:13px;position:relative;overflow:hidden;}
 
@@ -233,9 +210,6 @@ button{font-family:var(--font);border:none;cursor:pointer;background:none;}
 
 .analyze-footer{text-align:center;font-size:13px;color:var(--ink-muted);line-height:1.5;}
 
-/* =========================================================
-   EKRAN 4 — SONUÇ & EYLEM
-   ========================================================= */
 #screen-result{background:var(--base);padding-bottom:40px;}
 .result-top-bar{display:flex;align-items:center;justify-content:space-between;padding:54px 24px 16px;}
 
@@ -269,13 +243,9 @@ button{font-family:var(--font);border:none;cursor:pointer;background:none;}
 .btn-health{background:var(--blush-deep);color:var(--white);box-shadow:0 6px 20px rgba(224,120,152,.28);}
 .btn-retry {background:var(--card);color:var(--plum);border:1.5px solid var(--lavender);}
 
-/* Toast */
 .toast{position:absolute;bottom:60px;left:50%;transform:translateX(-50%) translateY(10px);background:var(--plum);color:var(--white);font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-pill);box-shadow:0 8px 24px rgba(107,79,158,.35);white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .3s ease,transform .3s ease;z-index:9999;}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
-/* =========================================================
-   YENİ: NUMUNE SEÇİM EKRANI VE SAKIZ ÇERÇEVESİ
-   ========================================================= */
 #screen-selection { background: var(--base); padding: 24px; justify-content: center; }
 .selection-header { text-align: center; margin-bottom: 30px; }
 .selection-header .pill-label { margin-bottom: 12px; }
@@ -291,7 +261,6 @@ button{font-family:var(--font);border:none;cursor:pointer;background:none;}
 .sample-info h3 { font-size: 18px; color: var(--plum); font-weight: 800; margin-bottom: 4px; }
 .sample-info p { font-size: 13px; color: var(--ink-muted); line-height: 1.4; }
 
-/* Sakız seçildiğinde çerçevenin kare-oval olması için */
 .guide-ring.mode-sakiz .guide-ring-outer { border-radius: 36px; border: 2px dashed rgba(200,186,232,.60); }
 .guide-ring.mode-sakiz .guide-ring-border { border-radius: 36px; }
 </style>
@@ -301,9 +270,6 @@ button{font-family:var(--font);border:none;cursor:pointer;background:none;}
 <div class="phone-shell">
 <div class="phone-device">
 
-  <!-- ======================================================
-       EKRAN 1 — ONBOARDING
-       ====================================================== -->
   <section class="screen active" id="screen-onboard" aria-label="Karşılama ve bilgi ekranı">
     <div class="top-bar">
       <div class="logo-type"><div class="logo-dot"></div>Karakuş KDS</div>
@@ -346,9 +312,6 @@ button{font-family:var(--font);border:none;cursor:pointer;background:none;}
   <button class="btn-primary" onclick="goTo('screen-selection')">Taramaya Başla →</button>
     </div>
   </section>
-<!-- ======================================================
-       YENİ EKRAN 1.5 — NUMUNE SEÇİMİ
-       ====================================================== -->
   <section class="screen" id="screen-selection" aria-label="Numune türü seçimi">
     <div class="selection-header">
       <div class="pill-label">Adım 1</div>
@@ -372,9 +335,6 @@ button{font-family:var(--font);border:none;cursor:pointer;background:none;}
       </button>
     </div>
   </section>
-  <!-- ======================================================
-       EKRAN 2 — KAMERA TARAMA
-       ====================================================== -->
   <section class="screen" id="screen-scan" aria-label="Kamera ile numune tarama ekranı">
     <div class="camera-bg" id="camBg"></div>
 
@@ -387,7 +347,6 @@ button{font-family:var(--font);border:none;cursor:pointer;background:none;}
     <div class="camera-area">
       <video id="camVideo2" autoplay playsinline muted></video>
 
-      <!-- İzin / hata durumu overlay -->
       <div class="cam-status-overlay" id="camStatusOverlay">
         <div class="cam-status-icon">📸</div>
         <div class="cam-status-text">Numuneyi taramak için<br>kameraya erişim gerekiyor</div>
@@ -395,7 +354,6 @@ button{font-family:var(--font);border:none;cursor:pointer;background:none;}
         <button class="btn-cam-permit" id="camPermitBtn">Kamerayı Aç</button>
       </div>
 
-      <!-- Kılavuz dairesi ve tarama arayüzü -->
       <div class="guide-ring-wrap" id="guideRingWrap" style="display:none;">
         <div class="guide-ring" role="img" aria-label="Lolipopu bu çerçeveye yerleştirin">
           <div class="guide-ring-outer"></div>
@@ -429,9 +387,6 @@ button{font-family:var(--font);border:none;cursor:pointer;background:none;}
     <canvas id="analyzeCanvas" style="display:none;" aria-hidden="true"></canvas>
   </section>
 
-  <!-- ======================================================
-       EKRAN 3 — ANALİZ EDİLİYOR
-       ====================================================== -->
   <section class="screen" id="screen-analyze" aria-label="Renk analizi yapılıyor" aria-live="polite">
     <div class="analyze-header">
       <div class="pill-label" style="margin:0 auto 14px;" aria-hidden="true">🔬 Sistem Analizi</div>
@@ -485,9 +440,6 @@ button{font-family:var(--font);border:none;cursor:pointer;background:none;}
     <div class="analyze-footer" role="status" aria-live="polite">Sonuçlar oluşturuluyor, lütfen bekleyin…</div>
   </section>
 
-  <!-- ======================================================
-       EKRAN 4 — SONUÇ & EYLEM
-       ====================================================== -->
   <section class="screen" id="screen-result" aria-label="Analiz sonucu ve önerilen eylemler">
     <div class="result-top-bar">
       <div class="logo-type"><div class="logo-dot"></div>Karakuş KDS</div>
@@ -530,19 +482,15 @@ button{font-family:var(--font);border:none;cursor:pointer;background:none;}
   <div class="si-dot" id="dot-1"></div>
   <div class="si-dot" id="dot-2"></div>
   <div class="si-dot" id="dot-3"></div>
-  <div class="si-dot" id="dot-4"></div> <!-- Yeni eklenen -->
+  <div class="si-dot" id="dot-4"></div>
 </div>
 
-  <!-- Toast -->
   <div class="toast" id="appToast" role="alert" aria-live="polite"></div>
 
 </div>
 </div>
 
 <script>
-/* =========================================================
-   Karakuş KDS — Gelişmiş Benek Algılama & HSV Mantığı
-   ========================================================= */
 'use strict';
 
 const SCREENS = ['screen-onboard', 'screen-selection', 'screen-scan', 'screen-analyze', 'screen-result'];
@@ -550,7 +498,6 @@ let cameraStream = null;
 let lastRGB = null;
 let selectedSampleType = 'lolipop'; 
 
-/* --- Ekran geçişi --- */
 function goTo(id){
   SCREENS.forEach(s => document.getElementById(s).classList.remove('active'));
   document.getElementById(id).classList.add('active');
@@ -558,7 +505,6 @@ function goTo(id){
   document.querySelectorAll('.si-dot').forEach((d,i) => d.classList.toggle('active', i===idx));
 }
 
-/* --- Numune Seçimi --- */
 function selectSampleAndStart(type) {
   selectedSampleType = type;
   
@@ -580,7 +526,6 @@ function selectSampleAndStart(type) {
   startCam();
 }
 
-/* --- Kamera Fonksiyonları --- */
 async function startCam(){
   const overlay = document.getElementById('camStatusOverlay');
   const video   = document.getElementById('camVideo2');
@@ -609,7 +554,6 @@ function stopCam(){
   if(video) video.srcObject=null;
 }
 
-/* --- YENİ BENEK ALGILAMA (FİLTRELEME) SİSTEMİ --- */
 function captureAndAnalyze(){
   const video  = document.getElementById('camVideo2');
   const canvas = document.getElementById('analyzeCanvas');
@@ -627,27 +571,35 @@ function captureAndAnalyze(){
 
     let tr=0, tg=0, tb=0, cnt=0;
     
-    // Sadece canlı renklere (beneklere) odaklan, beyaz/gri arka planı yoksay
     for(let i=0; i<pxData.length; i+=4){ 
       let pr = pxData[i], pg = pxData[i+1], pb = pxData[i+2];
       let [ph, ps, pv] = rgbToHsv(pr, pg, pb);
       
-      // ps (Doygunluk) 15'ten büyükse bu bir benektir (renklidir)
       if (ps > 15) { 
          tr += pr; tg += pg; tb += pb; cnt++;
       }
     }
 
-    // Eğer çerçevede renkli benek bulunduysa onların ortalamasını al
+ 
     if (cnt > 0) {
        r = Math.round(tr/cnt); g = Math.round(tg/cnt); b = Math.round(tb/cnt);
     } else {
-       // Benek bulunamazsa (veya tamamen beyazsa) güvenli bir varsayılan değer (Mor/Pembe arası) ver
-       r = 160; g = 100; b = 150; 
+
+       r = 120; g = 60; b = 130; 
     }
   } else {
-    // Demo verisi (Kamera kapalıyken test için)
-    r = 105; g = 180; b = 120; 
+  
+    const secim = Math.random();
+    if(secim > 0.6) {
+   
+        r = 180; g = 160; b = 90; 
+    } else if (secim > 0.3) {
+       
+        r = 180; g = 80; b = 100;
+    } else {
+    
+        r = 120; g = 60; b = 130;
+    }
   }
 
   lastRGB={r,g,b};
@@ -656,7 +608,6 @@ function captureAndAnalyze(){
   runAnalysis(r,g,b);
 }
 
-/* --- HSV (Hue, Saturation, Value) Algoritması --- */
 function rgbToHsv(r, g, b) {
   r /= 255; g /= 255; b /= 255;
   let max = Math.max(r, g, b), min = Math.min(r, g, b);
@@ -677,7 +628,6 @@ function rgbToHsv(r, g, b) {
 
 function rgbHex(r,g,b){ return [r,g,b].map(v=>v.toString(16).padStart(2,'0')).join('').toUpperCase(); }
 
-/* --- Analiz Animasyonu --- */
 function runAnalysis(r,g,b){
   const hex = rgbHex(r,g,b);
   document.getElementById('sampleCircle').style.background = '#'+hex;
@@ -701,7 +651,6 @@ function runAnalysis(r,g,b){
   });
 }
 
-/* --- YENİ BASİTLEŞTİRİLMİŞ SONUÇ MANTIĞI --- */
 function showResult(r,g,b,hex){
   const [h, s, v] = rgbToHsv(r, g, b);
   const card  = document.getElementById('resultCard');
@@ -715,38 +664,67 @@ function showResult(r,g,b,hex){
 
   card.className = 'result-card';
 
-  /* 
-    İstenilen Renk Kuralları:
-    - Mor (240 - 310) = NORMAL
-    - Kırmızı / Pembe (310'dan büyük veya 30'dan küçük) = NORMAL
-    - Mavi / Yeşil / Sarı (30 - 240) = HASTALIKLI
-  */
 
-  if (h >= 30 && h < 240) {
-    // HASTALIKLI (Mavi, Yeşil, Sarı tonları)
+  if (h >= 40 && h < 240) {
+  
     card.classList.add('state-alert');
     icon.textContent  = '⚠️';
-    title.textContent = 'Enfeksiyon Şüphesi';
-    text.textContent  = 'Numunede (Mavi/Yeşil/Sarı) renk değişimi saptandı. Bu bir hastalık belirtisi olabilir. Lütfen bir doktora danışın.';
-  } 
-  else if (h >= 240 && h <= 310) {
-    // NORMAL (Mor)
-    card.classList.add('state-normal');
-    icon.textContent  = '✅';
-    title.textContent = 'Sonuç Temiz (Mor)';
-    text.textContent  = 'Renk normal seviyede (Mor). Herhangi bir hastalık belirtisi saptanmadı.';
+    title.textContent = 'Enfeksiyon veya Bozulma Şüphesi';
+    text.textContent  = 'Numunede (Sarı/Yeşil/Mavi) renk değişimi saptandı. Bu bir hastalık belirtisi veya üretim sırasında yandığı (bazik reaksiyon) anlamına gelebilir. Lütfen doktora danışın.';
   } 
   else {
-    // NORMAL (Kırmızı / Pembe)
     card.classList.add('state-normal');
     icon.textContent  = '✅';
-    title.textContent = 'Sonuç Temiz (Pembe/Kırmızı)';
-    text.textContent  = 'Renk normal seviyede (Pembe/Kırmızı). Herhangi bir hastalık belirtisi saptanmadı.';
+    title.textContent = 'Sonuç Temiz (Normal)';
+    text.textContent  = 'Renk referans aralığında (Mor/Pembe/Kırmızı). Herhangi bir hastalık belirtisi veya bozulma saptanmadı.';
   }
-
   setTimeout(()=>goTo('screen-result'), 500);
 }
+/* --- YARDIMCI FONKSİYONLAR VE BUTON İŞLEMLERİ --- */
+function showToast(msg, ms=2800){
+  const t = document.getElementById('appToast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), ms);
+}
 
+function saveResult(){
+  if(!lastRGB){ showToast('Kaydedilecek sonuç bulunamadı.'); return; }
+  const entry = {
+    tarih: new Date().toLocaleString('tr-TR'),
+    numune: lastRGB,
+    not: 'Karakuş KDS ön tarama — tıbbi teşhis değildir. KVKK: Kişisel veri içermez.'
+  };
+  try{
+    const prev = JSON.parse(sessionStorage.getItem('kk_log')||'[]');
+    prev.push(entry);
+    sessionStorage.setItem('kk_log', JSON.stringify(prev));
+    showToast('✓ Sonuç bu oturum için kaydedildi');
+  }catch{
+    showToast('Kayıt sırasında bir hata oluştu.');
+  }
+}
+
+function findHealth(){
+  // Konum servisi destekleniyorsa
+  if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      // İzin verildiğinde mevcut konuma göre Haritalar'ı aç
+      function(pos) {
+        const lat = pos.coords.latitude;
+        const lng = pos.coords.longitude;
+        window.open(`https://www.google.com/maps/search/sağlık+kuruluşu+hastane/@${lat},${lng},14z`, '_blank', 'noopener');
+      },
+      // İzin reddedilirse veya hata olursa genel arama yap
+      function() {
+        window.open('https://www.google.com/maps/search/sağlık+kuruluşu+hastane', '_blank', 'noopener');
+      }
+    );
+  } else {
+    // Tarayıcı desteklemiyorsa genel arama yap
+    window.open('https://www.google.com/maps/search/sağlık+kuruluşu+hastane', '_blank', 'noopener');
+  }
+}
 function retryCapture(){
   goTo('screen-selection');
 }
